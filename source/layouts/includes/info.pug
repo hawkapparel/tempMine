@@ -1,0 +1,99 @@
+style.
+  #listado{
+    background-color:white;
+    padding:14px 10%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.6);
+    display:none;
+  }
+  #listado p.btn{
+    background-color: red;
+    padding:3px 8px;
+    line-height:normal;
+    color:white;
+    display:inline-block;
+    cursor:pointer;
+    position:absolute;
+    right:2%;
+    top:14px;
+  }
+  #listado code{
+    margin-right:5px;
+    color:red;
+  }
+  #listado ul{
+    padding:0 10px;
+    margin-left: 5px;
+  }
+  #listado p{
+    font-size:14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  #listado ul li{
+    list-style-type:decimal;
+    font-weight: bold;
+    margin-bottom:10px;
+    font-family:"Arial";
+    font-size:14px;
+  }
+  #listado ul li p{
+    padding: 2px 0;
+  }
+  #listado ul li ul li{
+    list-style-type:disc;
+    font-weight: normal;
+    margin-bottom:0px;
+  }
+  #listado ul li ul li ul{
+    margin-left:10px;
+  }
+  #listado ul li ul li ul li{
+    padding: 2px 0;
+  }
+
+#listado
+  p#btn.btn X
+  ul
+    li
+      strong #{data.tituloCNE}
+      ul
+        li Nombre en el listado de Páginas:
+          strong  #{data.tituloPagina}
+        li URL del CMS:
+          span
+            a(href=data.urlCMS)  #{data.urlCMS}
+          ul
+            li
+              | Variante:
+              strong #{data.variante}
+            li
+              | Versión:
+              strong #{data.version}
+        li Ubicación del contenido en el CMS:
+          strong  #{data.ubiContenido}
+        li Ubicación de Multimedia en el CMS:
+          strong  #{data.ubiMultimedia}
+        if data.external
+          li Archivos externos:
+             code #{data.external}
+        if data.comentarios
+          li Comentarios:
+            strong #{data.comentarios}
+
+//- script.
+//-   var btn = document.getElementById("btn");
+//-   var bannerInfo = document.getElementById("listado");
+//-   function initSession(){
+//-     sessionStorage.setItem('bannerInfo', true);
+//-     bannerInfo.style.display = "none";
+//-   }
+//-   function validSession(){
+//-     if(sessionStorage.length && sessionStorage.getItem('bannerInfo') === "true"){
+//-       bannerInfo.style.display = "none";
+//-     }
+//-   };
+//-   btn.addEventListener("click", initSession);
+//-   validSession()
